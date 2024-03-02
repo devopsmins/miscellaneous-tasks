@@ -18,3 +18,4 @@ resource "aws_route53_record" "jenkins" {
   records = [data.aws_instance.jenkins.public_ip]
 
 }
+
