@@ -16,6 +16,5 @@ resource "aws_route53_record" "jenkins" {
   zone_id = "Z05815251WQO0OK50UPQR"
   ttl     = 10
   records = [data.aws_instance.jenkins.public_ip]
-
 }
 
