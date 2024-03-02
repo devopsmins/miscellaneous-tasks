@@ -8,12 +8,15 @@ terraform {
 
 data "aws_instance" "jenkins" {
   instance_id = "i-0e3626aeec70816c8"
+  ami = ami-0f3c7d07486cad139
 }
 
 resource "aws_route53_record" "jenkins" {
+
   name    = "jenkins"
   type    = "A"
   zone_id = "Z05815251WQO0OK50UPQR"
   ttl     = 10
   records = [data.aws_instance.jenkins.public_ip]
+
 }
