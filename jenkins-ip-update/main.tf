@@ -3,6 +3,10 @@ terraform {
     bucket = "mins-terraform-state"
     key    = "misc/jenkins-ip-update/terraform.tfstate"
     region = "us-east-1"
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">=5.0, !=5.39"
+    }
   }
 }
 
@@ -16,5 +20,6 @@ resource "aws_route53_record" "jenkins" {
   zone_id = "Z05815251WQO0OK50UPQR"
   ttl     = 10
   records = [data.aws_instance.jenkins.public_ip]
+
 }
 
