@@ -1,10 +1,10 @@
 terraform {
-  //required_providers {
-    //aws = {
-      //source  = "hashicorp/aws"
-      //version = ">=5.0, !=5.39"
-    //}
-  //}
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">=5.0, !=5.39"
+    }
+  }
   backend "s3" {
     bucket = "mins-terraform-state"
     key    = "misc/jenkins-ip-update/terraform.tfstate"
@@ -14,7 +14,7 @@ terraform {
 }
 
 data "aws_instance" "jenkins" {
-  instance_id = "i-0e3626aeec70816c8"
+  instance_id = "i-0949025d03015383a"
 }
 
 resource "aws_route53_record" "jenkins" {
