@@ -38,5 +38,3 @@ resource "aws_route53_record" "artifactory" {
   records = [data.aws_instance.artifactory.public_ip]
 
 }
-
-
