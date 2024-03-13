@@ -14,7 +14,7 @@ terraform {
 }
 
 data "aws_instance" "jenkins" {
-  instance_id = "i-0949025d03015383a"
+  instance_id = "i-0e3626aeec70816c8"
 }
 
 resource "aws_route53_record" "jenkins" {
@@ -28,7 +28,7 @@ resource "aws_route53_record" "jenkins" {
 }
 
 data "aws_instance" "artifactory" {
-  instance_id = "i-04ce85a3c0997bf29"
+  instance_id = "i-0949025d03015383a"
 }
 
 resource "aws_route53_record" "artifactory" {
